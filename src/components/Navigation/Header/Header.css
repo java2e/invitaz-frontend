@@ -1,0 +1,31 @@
+.Header{
+    overflow: hidden;
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 100;
+    border: 1px solid rgba(73,255,110,0);
+    box-shadow: 0 2px 3px #ccc;
+
+}
+
+.Logo {
+    float: left;
+    width: 20%;
+    height: 80%;
+    margin-top: 20px;
+    margin-left: 100px;
+    margin-bottom: 32px;
+    z-index: 101;
+    background-color: transparent;
+
+
+}
+
+.Navigations {
+    float: right;
+    width: 40%;
+    margin-bottom: 0px;
+}
