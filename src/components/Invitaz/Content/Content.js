@@ -6,6 +6,9 @@ import Link2 from '../../../assets/images/link2.png';
 import Link3 from '../../../assets/images/link3.png';
 import Link4 from '../../../assets/images/link4.png';
 import Event from '../Event/Event'
+import Profile from '../Profile/Profile';
+import Login from '../Login/Login';
+import SignUp from '../Login/SignUp';
 
 import {Route} from 'react-router-dom';
 
@@ -27,6 +30,9 @@ const content = (props) => (
         />
 
         <Route path="/event1" exact component={Event}/>
+        <Route path="/profile" exact component={Profile}/>
+        <Route path="/login" exact component={Login}/>
+        <Route path="/signup" exact component={SignUp}/>
 
 
     </div>

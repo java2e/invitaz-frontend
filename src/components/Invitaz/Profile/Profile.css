@@ -1,0 +1,36 @@
+.Profile {
+
+    margin: auto;
+    width:100%;
+
+}
+
+.ProfileLeft {
+    width: 20%;
+    height: 500px;
+    float: left;
+    background-image: url("../../../assets/images/leftSideBack.png");
+    background-repeat: repeat-x;
+
+}
+.ProfileRight {
+    background-color: white;
+    width: 80%;
+    height: 500px;
+    float: right;
+}
+
+.ProfileFoto {
+    width: 90%;
+    height: 100px;
+    margin: auto;
+}
+
+.ProfileFoto img {
+    border-radius: 50%;
+}
+
+.NavigationLinks{
+    color: white;
+    font-size: 14px;
+}

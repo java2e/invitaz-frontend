@@ -39,7 +39,6 @@ class InvitazBuilder extends Component {
 
         console.log(updatedLinks);
 
-        alert('You continue!'+linkState);
     }
 
     render() {

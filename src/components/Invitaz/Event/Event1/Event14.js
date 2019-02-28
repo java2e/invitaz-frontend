@@ -1,7 +1,7 @@
 import React from 'react';
 import Women from "../../../../assets/images/femenine.png";
 
-import { InputGroup,FormControl,Card,Button,Form} from 'react-bootstrap';
+import { InputGroup,FormControl,Form} from 'react-bootstrap';
 
 
 const event14 = (props) => {
