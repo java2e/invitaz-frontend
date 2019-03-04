@@ -11,3 +11,4 @@ npm install react-datepicker --save
 
 04/03/2019
 npm install --save react-redux
+npm install --save redux
