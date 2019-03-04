@@ -8,3 +8,6 @@ Compare my code to yours to solve issues you might encounter. You may also copy 
 
 npm install react-bootstrap bootstrap
 npm install react-datepicker --save
+
+04/03/2019
+npm install --save react-redux
