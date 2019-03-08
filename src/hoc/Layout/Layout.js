@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import Aux from '../Aux/Aux';
+import Aux from '../Auxx/Auxx';
 import classes from './Layout.css';
 import Header from '../../components/Navigation/Header/Header'
-
+import {connect} from 'react-redux';
 
 class Layout extends Component {
     state = {
@@ -23,7 +23,7 @@ class Layout extends Component {
     render () {
         return (
             <Aux>
-                <Header/>
+                <Header isAuthenticated={this.props.isAuthenticated}/>
                 <main className={classes.Content}>
                     {this.props.children}
                 </main>
@@ -32,4 +32,13 @@ class Layout extends Component {
     }
 }
 
-export default Layout;
+
+const mapStateToProps = state => {
+
+    return {
+        isAuthenticated:state.auth.token!==null
+    };
+
+}
+
+export default connect(mapStateToProps) (Layout);
