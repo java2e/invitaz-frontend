@@ -9,7 +9,7 @@ import Event from '../Event/Event'
 import Profile from '../Profile/Profile';
 import Login from '../Login/Login';
 import SignUp from '../Login/SignUp';
-
+import Logout from '../../../containers/Logout/Logout';
 import {Route} from 'react-router-dom';
 
 
@@ -19,7 +19,8 @@ const content = (props) => (
 
     <div className={classes.Content}>
 
-        <Route path="/" exact render={ () => <div>
+        <Route path="/" exact render={ () =>
+            <div>
         <div><h3>Etkinlik Turunu Seciniz</h3></div>
         <a href="/event1"><Menu linkClicked={() => props.linkClicked('link1')} imgLink={Link1} title="Düğün / Nişan Davetiyesi Oluştur"/></a>
         <Menu imgLink={Link2} title="Topluluk Davetiyesi Oluştur"/>
@@ -32,6 +33,7 @@ const content = (props) => (
         <Route path="/event1" exact component={Event}/>
         <Route path="/profile" exact component={Profile}/>
         <Route path="/login" exact component={Login}/>
+        <Route path="/logout" exact component={Logout}/>
         <Route path="/signup" exact component={SignUp}/>
 
 
