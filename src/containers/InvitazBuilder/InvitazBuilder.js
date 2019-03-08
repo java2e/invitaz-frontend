@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 
-import Aux from '../../hoc/Aux/Aux';
+import Aux from '../../hoc/Auxx/Auxx';
 import Invitaz from '../../components/Invitaz/Invitaz'
+import {connect} from 'react-redux';
 
 class InvitazBuilder extends Component {
 
@@ -45,10 +46,18 @@ class InvitazBuilder extends Component {
 
         return (
             <Aux>
-                <Invitaz links={this.state.links} linkClicked={this.linkClicked}/>
+                <Invitaz isAuth={this.props.isAuthenticated} links={this.state.links} linkClicked={this.linkClicked}/>
             </Aux>
         );
     }
 }
 
-export default InvitazBuilder;
+
+const mapStateToProps = state => {
+
+    return {
+        isAuthenticated:state.auth.token!==null
+    };
+};
+
+export default connect(mapStateToProps)(InvitazBuilder)
