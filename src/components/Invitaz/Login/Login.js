@@ -2,13 +2,18 @@ import React, { Component } from "react";
 import { Button, FormGroup, FormControl, Form } from "react-bootstrap";
 import classes from "./Login.css";
 
-export default class Login extends Component {
+import * as actions from '../../../store/actions/index';
+
+import {connect} from 'react-redux';
+
+ class Login extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
             email: "",
-            password: ""
+            password: "",
+            isSignUp:true
         };
     }
 
@@ -24,6 +29,14 @@ export default class Login extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
+
+        this.props.onAuth(this.state.email,this.state.password,this.state.isSignUp);
+    }
+
+    switchAuthHandler =()=> {
+        this.setState(prevState=> {
+            return{isSignUp:!prevState.isSignUp};
+        });
     }
 
     render() {
@@ -56,7 +69,17 @@ export default class Login extends Component {
                         Login
                     </Button>
                 </form>
+                <Button onClick={this.switchAuthHandler}>SWITCH TO {this.state.isSignUp ? 'SIGNIN':'SIGNUP'}</Button>
             </div>
         );
     }
 }
+
+
+const mapDispatchToProps = dispatch => {
+     return {
+         onAuth:(email,password,isSignup) => dispatch(actions.auth(email,password,isSignup))
+     }
+}
+
+export default connect(null,mapDispatchToProps)(Login);
