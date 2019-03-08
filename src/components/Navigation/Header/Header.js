@@ -4,7 +4,7 @@ import Logo from '../../Logo/Logo'
 import NavigationItems from '../NavigationItems/NavigationItems';
 
 
-const header = () => {
+const header = (props) => {
 
     return (
         <div className={classes.Header}>
@@ -13,7 +13,7 @@ const header = () => {
             </div>
             <div className={classes.Navigations}>
             <nav>
-                <NavigationItems/>
+                <NavigationItems isAuthenticated={props.isAuthenticated}/>
             </nav>
             </div>
         </div>
