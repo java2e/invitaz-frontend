@@ -2,10 +2,16 @@ import React, { Component } from 'react';
 
 import Layout from './hoc/Layout/Layout';
 import InvitazBuilder from "./containers/InvitazBuilder/InvitazBuilder";
-
-import {BrowserRouter} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {BrowserRouter,withRouter} from 'react-router-dom';
+import * as actions from './store/actions/index';
 
 class App extends Component {
+
+  componentDidMount () {
+    this.props.onTryAutoSignup();
+  }
+
   render () {
     return (
         <BrowserRouter>
@@ -19,4 +25,11 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapDispatchToProps = dispatch => {
+  return {
+      onTryAutoSignup : () => dispatch(actions.authCheckState())
+  }
+}
+
+export default connect(null,mapDispatchToProps)(App);
+
