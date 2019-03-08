@@ -7,7 +7,7 @@ const invitaz =(props) => {
 
     return(
         <div className={classes.Invitaz} style={{backgroundImage: "url(" + backGround + ")"}}>
-            <Content links={props.links} linkClicked={props.linkClicked}/>
+            <Content isAuthenticated={props.isAuth} links={props.links} linkClicked={props.linkClicked}/>
         </div>
     );
 
