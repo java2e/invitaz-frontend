@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 
-import Aux from '../../../hoc/Aux/Aux';
+import Aux from '../../../hoc/Auxx/Auxx';
 import classes from './Profile.css';
 import ProfileFoto from "../../../assets/images/profile.png";
 import Line from "../../../assets/images/line.png";
+import {connect} from 'react-redux';
+import {Redirect} from 'react-router-dom';
 
-
-import { ListGroup } from 'react-bootstrap';
 
 
 class Profile extends Component {
@@ -14,10 +14,16 @@ class Profile extends Component {
 
     render() {
 
+        let authRedirect =null;
+        if(!this.props.isAuthenticated)
+        {
+            authRedirect=<Redirect to="/"/>
+        }
+
         return (
             <Aux>
                 <div className={classes.Profile}>
-
+                    {authRedirect}
                     <div>
                         <div className={classes.ProfileLeft}>
                             <div>
@@ -69,4 +75,12 @@ class Profile extends Component {
     }
 }
 
-export default Profile;
+const mapStateToProps = state => {
+
+    return {
+        isAuthenticated:state.auth.token!==null
+    };
+
+}
+
+export default connect(mapStateToProps)(Profile);
