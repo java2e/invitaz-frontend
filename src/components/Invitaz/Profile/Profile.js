@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 
-import Aux from '../../../hoc/Auxx/Auxx';
+import Aux from '../../hoc/Auxx/Auxx';
 import classes from './Profile.css';
-import ProfileFoto from "../../../assets/images/profile.png";
-import Line from "../../../assets/images/line.png";
+import ProfileFoto from "../../assets/images/profile.png";
+import Line from "../../assets/images/line.png";
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 
