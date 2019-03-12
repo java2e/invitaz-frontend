@@ -20,8 +20,6 @@ class InvitazBuilder extends Component {
 
     linkClicked = (link) => {
 
-        const linkState=this.state.links[link];
-
         const updatedLinks = {
             ...this.state.links
         };
