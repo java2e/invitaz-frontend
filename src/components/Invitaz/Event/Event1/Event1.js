@@ -1,5 +1,5 @@
 import React from 'react';
-import { InputGroup,FormControl,Card,Button,Form} from 'react-bootstrap';
+import { InputGroup,FormControl,Form} from 'react-bootstrap';
 
 import Men from '../../../../assets/images/masculine.png';
 import Women from '../../../../assets/images/femenine.png';
