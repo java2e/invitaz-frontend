@@ -47,6 +47,24 @@ export const checkAuthTimeout = (expirationTime) => {
 }
 
 
+export const signUp = (form) => {
+    return dispatch => {
+        dispatch(authStart());
+        const data = {...form};
+
+        let url='http://localhost:5000/api/auth/signup';
+        axios.post(url,data)
+            .then(response=>{
+                console.log(response);
+            })
+            .catch(err=> {
+                console.log(err);
+                dispatch(authFail(err));
+            })
+    }
+}
+
+
 export const auth = (email,password,isSignup)=> {
     return dispatch => {
         dispatch(authStart());
